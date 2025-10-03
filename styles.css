@@ -238,28 +238,18 @@ img, video, iframe { max-width: 100%; height: auto; }
 .wh-cta svg { width:16px; height:16px; display:block; }
 @media (max-width:560px){ .wh-cta span.label { display:none; } .wh-cta { padding:8px; } }
 
-/* === Update: Larger WhatsApp header button on small screens === */
-@media (max-width: 560px){
-  .nav .wh-cta{
-    padding: 12px;           /* bigger tap target */
-    border-radius: 12px;
-  }
-  .nav .wh-cta svg{
-    width: 22px;
-    height: 22px;            /* bigger icon */
-  }
-}
 
-/* === Update 2: Keep 'WhatsApp' text visible on mobile === */
-@media (max-width: 560px){
-  /* override earlier hide rule */
+/* === Override: Keep WhatsApp CTA full (desktop-style) on mobile === */
+@media (max-width: 560px) {
   .wh-cta span.label { 
-    display: inline !important; 
-    font-size: 0;               /* hide original long text */
+    display: inline !important;
   }
-  .wh-cta span.label::after{
-    content: "WhatsApp"; 
-    font-size: 13px; 
-    letter-spacing: .2px;
+  .wh-cta { 
+    padding: 8px 10px !important; 
+    gap: 8px !important;
+  }
+  /* If the header wraps, keep good spacing */
+  .header-inner { 
+    row-gap: 8px;
   }
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Harley Orange — Alpaca F1 Jackets</title><link href="../styles.css" rel="stylesheet"/></head>
+<body>
+<header class="site-header"><div class="container header-inner">
+<div class="brand"><span class="brand-logo">🏁</span><a class="brand-name" href="../index.html#/">Alpaca F1 Jackets</a></div>
+<nav class="nav"><a href="../index.html#/">Shop</a><a href="../reviews.html">Reviews</a><a href="../policies.html">Delivery &amp; Terms</a></nav>
+</div></header>
+<main aria-live="polite" class="container" id="app">
+<div class="breadcrumbs"><a href="../index.html#/">Shop</a> / <span>Harley Orange</span></div>
+<div class="product">
+<div class="gallery">
+<div class="main-image" id="main"></div>
+<div class="thumbs" id="thumbs"></div>
+</div>
+<div class="product-panel">
+<div class="product-title">Harley Orange</div>
+<div class="price">₹3,250</div>
+<div class="product-desc">Premium F1-inspired jacket. WhatsApp checkout only.</div>
+<div aria-label="Choose size" class="chips" id="sizeChips" role="group"></div>
+<div aria-label="Size chart" class="sizechart" role="region">
+<h3>Size chart (cm)</h3>
+<table aria-label="Jacket size chart in centimeters">
+<thead>
+<tr>
+<th>Size</th><th>Length</th><th>Bust</th><th>Sleeve</th><th>Shoulder</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>M</td><td>66</td><td>120</td><td>56</td><td>53</td></tr>
+<tr><td>L</td><td>68.5</td><td>126</td><td>58.5</td><td>56</td></tr>
+<tr><td>XL</td><td>71</td><td>132</td><td>61</td><td>58.5</td></tr>
+<tr><td>2XL</td><td>73.5</td><td>136</td><td>63.5</td><td>61</td></tr>
+</tbody>
+</table>
+<figure class="size-guide"><img alt="How to measure: length, bust, sleeve, shoulder" src="../assets/size-guide.png"/><figcaption><strong>How to measure</strong><ul class="measure-list"><li>Length: top of shoulder to bottom hem.</li><li>Bust: full 360° chest circumference at the widest point (for flat measurement, take pit‑to‑pit × 2).</li><li>Sleeve: shoulder seam to cuff.</li><li>Shoulder: seam to seam across the back.</li></ul></figcaption></figure></div>
+<div class="qty"><span>Qty</span><input id="qty" min="1" type="number" value="1"/></div>
+<div class="meta"><span class="badge">WhatsApp checkout</span><span class="badge">No online payment</span></div>
+<div class="alert">Order opens WhatsApp with a pre-filled message.</div>
+<a class="btn btn-primary" href="#" id="buy">Buy on WhatsApp</a>
+<a class="btn btn-ghost" href="../index.html#/">← Back to shop</a>
+</div>
+</div>
+</main>
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Alpaca F1 Jackets • Built for WhatsApp checkout • No online payments</p></div></footer>
+<script>
+const WHATSAPP_NUMBER='918086009430';
+const product={"id": "jacket-17", "name": "Harley Orange", "sizes": ["2XL"], "price": 3250, "currency": "INR", "images": ["assets/jacket-17-1.jpg", "assets/jacket-17-2.jpg"], "videoUrl": "https://drive.google.com/file/d/1JXEfwjXnSVeKfh7P-rraZ74f8LlOArfq/preview"};
+const qtyEl=document.getElementById('qty'), buyBtn=document.getElementById('buy');
+const main=document.getElementById('main'), thumbs=document.getElementById('thumbs'), sizeChips=document.getElementById('sizeChips');
+let chosenSize=null;
+function setMainImage(src){main.innerHTML='';const img=document.createElement('img');img.alt=product.name;img.src=src;main.appendChild(img)}
+function setMainVideo(src){main.innerHTML='';const v=document.createElement('video');v.controls=true;v.playsInline=true;v.src=src;v.style.width='100%';v.style.height='100%';main.appendChild(v)}
+function setMainDrive(src){main.innerHTML='';const iframe=document.createElement('iframe');iframe.src=src;iframe.allow='autoplay; fullscreen';iframe.style.width='100%';iframe.style.height='100%';iframe.style.border='0';main.appendChild(iframe)}
+(product.sizes||[]).forEach((s,i)=>{const b=document.createElement('button');b.className='chip'+(i===0?' active':'');b.type='button';b.textContent=s;b.addEventListener('click',()=>{Array.from(sizeChips.children).forEach(n=>n.classList.remove('active'));b.classList.add('active');chosenSize=s});sizeChips.appendChild(b);if(i===0)chosenSize=s});
+const imgs=product.images||[];
+imgs.forEach((src,i)=>{const t=document.createElement('div');t.className='thumb'+(i===0?' active':'');const im=document.createElement('img');im.src='../'+src;im.alt=product.name+' '+(i+1);t.appendChild(im);t.addEventListener('click',()=>{Array.from(thumbs.children).forEach(n=>n.classList.remove('active'));t.classList.add('active');setMainImage('../'+src)});thumbs.appendChild(t)});
+if(product.videoUrl){const t=document.createElement('div');t.className='thumb video-thumb';const im=document.createElement('img');im.src='../'+(imgs[0]||imgs[1]||'');im.alt='Video';t.appendChild(im);t.addEventListener('click',()=>{Array.from(thumbs.children).forEach(n=>n.classList.remove('active'));t.classList.add('active');if(product.videoUrl.includes('drive.google.com')) setMainDrive(product.videoUrl); else setMainVideo(product.videoUrl);});thumbs.appendChild(t);}
+if(imgs[0]) setMainImage('../'+imgs[0]);
+buyBtn.addEventListener('click',e=>{e.preventDefault();const msg=['Hi! I want to order:','• Product: '+product.name,chosenSize?'• Size: '+chosenSize:'','• Qty: '+(parseInt(qtyEl.value||'1')||1),'• Link: '+location.href].filter(Boolean).join('\n');const wa='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg);window.open(wa,'_blank','noopener')});
+document.getElementById('year').textContent=(new Date()).getFullYear();
+</script>
+</body></html>

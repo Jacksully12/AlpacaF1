@@ -253,3 +253,120 @@ img, video, iframe { max-width: 100%; height: auto; }
     row-gap: 8px;
   }
 }
+
+
+/* ===== Mobile responsiveness pass ===== */
+
+/* Make form controls fluid */
+.search, .select { width: 100%; }
+
+/* Container breathing room on smaller screens */
+@media (max-width: 900px) {
+  .container { padding: 16px; }
+}
+
+/* Filters: 3 -> 2 cols with full-width search */
+@media (max-width: 720px) {
+  .filters { grid-template-columns: 1fr 1fr; }
+  .filters .search { grid-column: 1 / -1; }
+}
+
+/* Filters: stack everything on very small screens */
+@media (max-width: 520px) {
+  .filters { grid-template-columns: 1fr; }
+}
+
+/* Header: keep things compact while allowing wrap */
+@media (max-width: 720px) {
+  .brand { font-size: 18px; }
+  .nav a { padding: 8px 10px; }
+}
+
+/* Card text sizing on mobile */
+@media (max-width: 620px) {
+  .card-title { font-size: 15px; }
+  .price { font-size: 16px; }
+}
+
+/* Make the size chart / any wide tables scroll horizontally */
+.sizechart, .table-scroll {
+  display: block; overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+
+/* Keep images contained safely */
+img { max-width: 100%; height: auto; }
+
+
+/* ===== Deep mobile header + overall responsiveness improvements ===== */
+
+/* Let brand text truncate gracefully */
+.brand { max-width: 50vw; min-width: 0; }
+.brand-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display:inline-block; max-width: 46vw; }
+
+/* Make the nav a pill bar that scrolls horizontally on small screens */
+.nav { display:flex; gap: 8px; align-items:center; }
+@media (max-width: 768px) {
+  .header-inner { flex-wrap: nowrap; gap: 8px; padding: 8px 10px; }
+  .nav { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+  .nav a, .nav .wh-cta { flex: 0 0 auto; white-space: nowrap; }
+  /* Optional: slight bottom padding so chips don't get clipped */
+  .nav { padding-bottom: 2px; }
+  /* Tighter brand text */
+  .brand { font-size: 18px; }
+}
+
+/* Even narrower phones */
+@media (max-width: 380px) {
+  .brand { font-size: 16px; }
+  .brand-name { max-width: 42vw; }
+}
+
+/* Page titles & subtitles scale down */
+@media (max-width: 560px) {
+  .page-title { font-size: 22px; }
+  .page-sub { font-size: 14px; }
+}
+
+/* Keep WhatsApp CTA desktop-like but ensure it can scroll with nav */
+@media (max-width: 560px) {
+  .wh-cta span.label { display: inline !important; }
+  .wh-cta { padding: 8px 10px !important; gap: 8px !important; }
+}
+
+/* Product card tweaks */
+@media (max-width: 420px) {
+  .card-body { padding: 12px; }
+  .card-sub { font-size: 13px; }
+  .price { font-size: 16px; }
+}
+
+/* Prevent layout jump on iOS address bar show/hide */
+:root { height: 100%; }
+body { min-height: 100%; }
+
+/* Nice thin scrollbars for the horizontal nav (WebKit) */
+.nav::-webkit-scrollbar { height: 6px; }
+.nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,.12); border-radius: 999px; }
+.nav::-webkit-scrollbar-track { background: transparent; }
+
+
+/* === Mobile header layout: stack and push WhatsApp CTA below === */
+@media (max-width: 720px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .nav a { text-align: center; }
+  /* Make the WhatsApp CTA occupy its own full row below */
+  .nav .wh-cta {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: center;
+  }
+}

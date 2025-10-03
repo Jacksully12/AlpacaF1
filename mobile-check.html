@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mobile Layout Check</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <style>
+    :root{--ok:#2ecc71;--no:#e74c3c;--bg:#111;--card:#1b1b1b;--muted:#9aa0a6;color-scheme:dark light;}
+    html,body{margin:0;padding:0;background:var(--bg);color:#f2f2f2;font:16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
+    .wrap{max-width:880px;margin:24px auto;padding:16px;}
+    h1{font-size:1.25rem;margin-bottom:8px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid #2a2a2a}
+    code{background:#00000033;padding:2px 6px;border-radius:6px}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid #333;font-size:.85rem}
+    .ok{background:color-mix(in oklab, var(--ok) 20%, transparent);border-color:var(--ok)}
+    .no{background:color-mix(in oklab, var(--no) 20%, transparent);border-color:var(--no)}
+    .kv {display:grid;grid-template-columns:140px 1fr;gap:8px 12px}
+    .bp{padding:10px;border-radius:10px;border:1px dashed #444}
+    .green{border-color:var(--ok);background:color-mix(in oklab, var(--ok) 15%, transparent)}
+    .red{border-color:var(--no);background:color-mix(in oklab, var(--no) 15%, transparent)}
+    .bar{height:12px;background:linear-gradient(90deg,#333,#555);border-radius:6px;overflow:hidden;margin-top:4px}
+    .fill{height:100%;background:#2ecc71}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Mobile Layout Check</h1>
+    <div class="grid">
+      <div class="card">
+        <h3>Viewport & Device</h3>
+        <div class="kv mono">
+          <div>innerWidth</div><div id="iw"></div>
+          <div>innerHeight</div><div id="ih"></div>
+          <div>devicePixelRatio</div><div id="dpr"></div>
+          <div>UA</div><div id="ua"></div>
+        </div>
+        <div class="bar"><div id="bar" class="fill"></div></div>
+      </div>
+      <div class="card">
+        <h3>Media Queries (match = green)</h3>
+        <div id="bps"></div>
+      </div>
+      <div class="card">
+        <h3>CSS & Safari quirks</h3>
+        <div class="kv mono">
+          <div>flex-gap support</div><div id="gap"></div>
+          <div>100vh (px)</div><div id="vh"></div>
+          <div>100dvh (px)</div><div id="dvh"></div>
+          <div>safe-area-inset-top</div><div id="safeTop"></div>
+        </div>
+      </div>
+    </div>
+    <p class="mono">Tip: If your mobile layout doesn’t trigger, your real phone width may be above your <code>@media (max-width: ...)</code>. Use this page to pick better breakpoints.</p>
+  </div>
+<script>
+(function(){
+  const el = (id)=>document.getElementById(id);
+  function update(){
+    el('iw').textContent = window.innerWidth + 'px';
+    el('ih').textContent = window.innerHeight + 'px';
+    el('dpr').textContent = window.devicePixelRatio;
+    el('ua').textContent = navigator.userAgent;
+    el('bar').style.width = Math.min(100, (window.innerWidth/600)*100) + '%';
+    // Breakpoints to test – edit to your site values
+    const points = [360, 390, 414, 480, 576, 640, 720, 768, 820];
+    const wrap = el('bps'); wrap.innerHTML='';
+    points.forEach(px=>{
+      const m = window.matchMedia(`(max-width:${px}px)`);
+      const div = document.createElement('div');
+      div.className='bp ' + (m.matches?'green':'red');
+      div.textContent = `@media (max-width:${px}px) => ${m.matches?'MATCH':'NO'}`;
+      wrap.appendChild(div);
+    });
+    // Feature checks
+    (function(){
+      const s = document.createElement('div');
+      s.style.display='flex'; s.style.gap='1px';
+      s.appendChild(document.createElement('div'));
+      s.appendChild(document.createElement('div'));
+      document.body.appendChild(s);
+      const gapSupported = s.scrollHeight === 0 || getComputedStyle(s).gap !== '0px';
+      el('gap').innerHTML = `<span class="pill ${gapSupported?'ok':'no'}">${gapSupported?'yes':'no'}</span>`;
+      document.body.removeChild(s);
+    })();
+    const vh = document.createElement('div');
+    vh.style.height='100vh'; document.body.appendChild(vh);
+    el('vh').textContent = vh.clientHeight+'px';
+    document.body.removeChild(vh);
+    const dvh = document.createElement('div');
+    dvh.style.height='100dvh'; document.body.appendChild(dvh);
+    el('dvh').textContent = dvh.clientHeight+'px';
+    document.body.removeChild(dvh);
+    const safeTop = getComputedStyle(document.documentElement).getPropertyValue('padding-top')
+      || (window.visualViewport ? window.visualViewport.offsetTop+'px' : 'n/a');
+    el('safeTop').textContent = safeTop || 'n/a';
+  }
+  update();
+  window.addEventListener('resize', update);
+})();</script>
+</body>
+</html>

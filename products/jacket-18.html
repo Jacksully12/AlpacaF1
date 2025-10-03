@@ -46,20 +46,132 @@
 </main>
 <footer class="site-footer"><div class="container"><p>© <span id="year"></span> Alpaca F1 Jackets • Built for WhatsApp checkout • No online payments</p></div></footer>
 <script>
+
 const WHATSAPP_NUMBER='918086009430';
 const product={"id": "jacket-18", "name": "Budweiser", "sizes": ["M"], "price": 3250, "currency": "INR", "images": ["assets/jacket-18-1.jpg", "assets/jacket-18-2.jpg"], "videoUrl": "https://drive.google.com/file/d/1nTC3bJfWJlsbPEiiXQQ9tM3Y0xCPVd4g/preview"};
-const qtyEl=document.getElementById('qty'), buyBtn=document.getElementById('buy');
-const main=document.getElementById('main'), thumbs=document.getElementById('thumbs'), sizeChips=document.getElementById('sizeChips');
+
+const qtyEl=document.getElementById('qty');
+const buyBtn=document.getElementById('buy');
+const main=document.getElementById('main');
+const thumbs=document.getElementById('thumbs');
+const sizeChips=document.getElementById('sizeChips');
+
 let chosenSize=null;
-function setMainImage(src){main.innerHTML='';const img=document.createElement('img');img.alt=product.name;img.src=src;main.appendChild(img)}
-function setMainVideo(src){main.innerHTML='';const v=document.createElement('video');v.controls=true;v.playsInline=true;v.src=src;v.style.width='100%';v.style.height='100%';main.appendChild(v)}
-function setMainDrive(src){main.innerHTML='';const iframe=document.createElement('iframe');iframe.src=src;iframe.allow='autoplay; fullscreen';iframe.style.width='100%';iframe.style.height='100%';iframe.style.border='0';main.appendChild(iframe)}
-(product.sizes||[]).forEach((s,i)=>{const b=document.createElement('button');b.className='chip'+(i===0?' active':'');b.type='button';b.textContent=s;b.addEventListener('click',()=>{Array.from(sizeChips.children).forEach(n=>n.classList.remove('active'));b.classList.add('active');chosenSize=s});sizeChips.appendChild(b);if(i===0)chosenSize=s});
+
+function setMainImage(src){
+  main.innerHTML='';
+  const img=document.createElement('img');
+  img.alt=product.name;
+  img.src=src;
+  main.appendChild(img);
+}
+function setMainVideo(src){
+  main.innerHTML='';
+  const v=document.createElement('video');
+  v.controls=true; v.playsInline=true; v.muted=false;
+  v.style.width='100%'; v.style.height='100%';
+  v.src=src;
+  main.appendChild(v);
+}
+function setMainDrive(src){
+  main.innerHTML='';
+  const iframe=document.createElement('iframe');
+  iframe.allow='autoplay; fullscreen';
+  iframe.src=src;
+  iframe.style.width='100%'; iframe.style.height='100%'; iframe.style.border='0';
+  main.appendChild(iframe);
+}
+
+(product.sizes||[]).forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.className='chip';
+  b.textContent=s;
+  b.setAttribute('aria-pressed','false');
+  b.addEventListener('click',()=>{ chosenSize=s; document.querySelectorAll('.chip[aria-pressed]').forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true'); });
+  sizeChips.appendChild(b);
+  if(i===0) { chosenSize=s; b.setAttribute('aria-pressed','true'); }
+});
+
 const imgs=product.images||[];
-imgs.forEach((src,i)=>{const t=document.createElement('div');t.className='thumb'+(i===0?' active':'');const im=document.createElement('img');im.src='../'+src;im.alt=product.name+' '+(i+1);t.appendChild(im);t.addEventListener('click',()=>{Array.from(thumbs.children).forEach(n=>n.classList.remove('active'));t.classList.add('active');setMainImage('../'+src)});thumbs.appendChild(t)});
-if(product.videoUrl){const t=document.createElement('div');t.className='thumb video-thumb';const im=document.createElement('img');im.src='../'+(imgs[0]||imgs[1]||'');im.alt='Video';t.appendChild(im);t.addEventListener('click',()=>{Array.from(thumbs.children).forEach(n=>n.classList.remove('active'));t.classList.add('active');if(product.videoUrl.includes('drive.google.com')) setMainDrive(product.videoUrl); else setMainVideo(product.videoUrl);});thumbs.appendChild(t);}
-if(imgs[0]) setMainImage('../'+imgs[0]);
-buyBtn.addEventListener('click',e=>{e.preventDefault();const msg=['Hi! I want to order:','• Product: '+product.name,chosenSize?'• Size: '+chosenSize:'','• Qty: '+(parseInt(qtyEl.value||'1')||1),'• Link: '+location.href].filter(Boolean).join('\n');const wa='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg);window.open(wa,'_blank','noopener')});
+// Helper to create a thumb
+function addImageThumb(src, selectOnInit=false){
+  const t=document.createElement('div');
+  t.className='thumb';
+  const im=document.createElement('img'); im.src='../'+src; im.alt=product.name;
+  t.appendChild(im);
+  t.addEventListener('click',()=>{ document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active')); t.classList.add('active'); setMainImage('../'+src); });
+  thumbs.appendChild(t);
+  if(selectOnInit) { t.classList.add('active'); setMainImage('../'+src); }
+  return t;
+}
+
+// Add the image thumbs first
+const firstThumb = imgs[0] ? addImageThumb(imgs[0], true) : null;
+if(imgs[1]) addImageThumb(imgs[1]);
+
+// Video thumb (if available)
+if(product.videoUrl){
+  const vt=document.createElement('div');
+  vt.className='thumb';
+  vt.setAttribute('data-type','video');
+  // Use first image as poster if available
+  if(imgs[0]){
+    const poster=document.createElement('img');
+    poster.src='../'+imgs[0];
+    poster.alt=product.name+' video';
+    vt.appendChild(poster);
+  }
+  const badge=document.createElement('span');
+  badge.className='thumb-badge';
+  badge.textContent='Close‑up';
+  const play=document.createElement('span');
+  play.className='thumb-play';
+  play.textContent='▶';
+  vt.appendChild(badge); vt.appendChild(play);
+  vt.addEventListener('click',()=>{ 
+    document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active')); 
+    vt.classList.add('active'); 
+    if(/drive\.google\.com/.test(product.videoUrl)) setMainDrive(product.videoUrl);
+    else setMainVideo(product.videoUrl);
+  });
+  // On mobile, place video first to be obvious
+  const isMobile = window.matchMedia('(max-width: 620px)').matches;
+  if(isMobile && thumbs.firstChild) thumbs.insertBefore(vt, thumbs.firstChild);
+  else thumbs.appendChild(vt);
+
+  // Add a CTA near price/title
+  const panel=document.querySelector('.product-panel');
+  if(panel){
+    const cta=document.createElement('button');
+    cta.id='watchVideo';
+    cta.className='watch-video-cta';
+    cta.type='button';
+    cta.textContent='▶ Product video';
+    cta.addEventListener('click',()=>{ 
+      if(/drive\.google\.com/.test(product.videoUrl)) setMainDrive(product.videoUrl);
+      else setMainVideo(product.videoUrl);
+      document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));
+      vt.classList.add('active');
+      vt.scrollIntoView({block:'nearest', behavior:'smooth'});
+    });
+    const desc=panel.querySelector('.product-desc');
+    if(desc) desc.insertAdjacentElement('afterend', cta);
+    else panel.insertBefore(cta, panel.firstChild);
+  }
+}
+
+// Default main image if not already set
+if(!main.querySelector('img,video,iframe') && imgs[0]) setMainImage('../'+imgs[0]);
+
+buyBtn.addEventListener('click',e=>{ 
+  e.preventDefault(); 
+  const qty = Math.max(1, parseInt(qtyEl.value||'1',10)); 
+  const msg = `Hi! I want to order: ${product.name} | Size: ${chosenSize} | Qty: ${qty}`; 
+  const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=`+encodeURIComponent(msg); 
+  window.open(wa,'_blank','noopener'); 
+});
+
 document.getElementById('year').textContent=(new Date()).getFullYear();
+
 </script>
 </body></html>

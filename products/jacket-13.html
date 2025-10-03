@@ -6,7 +6,12 @@
 <body>
 <header class="site-header"><div class="container header-inner">
 <div class="brand"><span class="brand-logo">🏁</span><a class="brand-name" href="../index.html#/">Alpaca F1 Jackets</a></div>
-<nav class="nav"><a href="../index.html#/">Shop</a><a href="../reviews.html">Reviews</a><a href="../policies.html">Delivery &amp; Terms</a></nav>
+<nav class="nav"><a href="../index.html#/">Shop</a><a href="../reviews.html">Reviews</a><a href="../policies.html">Delivery &amp; Terms</a><a class="wh-cta" href="https://chat.whatsapp.com/Jd0HeHZ14IK7Cj0cV9jGwT?mode=ems_copy_t" target="_blank" rel="noopener" aria-label="Join our WhatsApp Community">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+  <path fill="currentColor" d="M16 3C8.8 3 3 8.8 3 16c0 2.2.6 4.3 1.6 6.1L3 29l7-1.9c1.7.9 3.8 1.4 6 1.4 7.2 0 13-5.8 13-12.9C29 8.8 23.2 3 16 3zm7.4 18.7c-.3.9-1.6 1.6-2.4 1.7-.6.1-1.5.1-2.3-.2-.6-.2-1.3-.4-2.2-.8-3.9-1.8-6.3-5.6-6.5-5.9-.2-.2-1.6-2.1-1.6-4.1 0-1.9.5-3 .9-3.5.3-.4.9-.6 1.3-.6.3 0 .6 0 .8.1.2.1.6 0 1 .8 0 0 .3.8.8 1.6.5 1 .9 1.3.8.1-.3-.8-.6-1.4-.4-1.8.2-.5.7-.8 1-.9.3-.1.6-.1.9 0 .3 0 .6 0 .9.7.4.7.9 1.6.7 2.6-.2 1.1-1 2.6-1.4 3.1 0 0 2.7 4.8 6.5 6.3.9.4 1.8.3 2.4.1.7-.2 2.1-.9 2.5-1.9.3-.9.3-1.7.2-1.8-.1-.2-.2-.2-.6-.4z"/>
+</svg>
+  <span class="label">Join our WhatsApp Community</span>
+</a></nav>
 </div></header>
 <main aria-live="polite" class="container" id="app">
 <div class="breadcrumbs"><a href="../index.html#/">Shop</a> / <span>BMW White Blue</span></div>
@@ -93,7 +98,6 @@ function setMainDrive(src){
 });
 
 const imgs=product.images||[];
-// Helper to create a thumb
 function addImageThumb(src, selectOnInit=false){
   const t=document.createElement('div');
   t.className='thumb';
@@ -105,16 +109,13 @@ function addImageThumb(src, selectOnInit=false){
   return t;
 }
 
-// Add the image thumbs first
 const firstThumb = imgs[0] ? addImageThumb(imgs[0], true) : null;
 if(imgs[1]) addImageThumb(imgs[1]);
 
-// Video thumb (if available)
 if(product.videoUrl){
   const vt=document.createElement('div');
   vt.className='thumb';
   vt.setAttribute('data-type','video');
-  // Use first image as poster if available
   if(imgs[0]){
     const poster=document.createElement('img');
     poster.src='../'+imgs[0];
@@ -123,7 +124,7 @@ if(product.videoUrl){
   }
   const badge=document.createElement('span');
   badge.className='thumb-badge';
-  badge.textContent='Close‑up';
+  badge.textContent='Video';
   const play=document.createElement('span');
   play.className='thumb-play';
   play.textContent='▶';
@@ -134,12 +135,10 @@ if(product.videoUrl){
     if(/drive\.google\.com/.test(product.videoUrl)) setMainDrive(product.videoUrl);
     else setMainVideo(product.videoUrl);
   });
-  // On mobile, place video first to be obvious
   const isMobile = window.matchMedia('(max-width: 620px)').matches;
   if(isMobile && thumbs.firstChild) thumbs.insertBefore(vt, thumbs.firstChild);
   else thumbs.appendChild(vt);
 
-  // Add a CTA near price/title
   const panel=document.querySelector('.product-panel');
   if(panel){
     const cta=document.createElement('button');
@@ -160,7 +159,6 @@ if(product.videoUrl){
   }
 }
 
-// Default main image if not already set
 if(!main.querySelector('img,video,iframe') && imgs[0]) setMainImage('../'+imgs[0]);
 
 buyBtn.addEventListener('click',e=>{ 

@@ -311,7 +311,7 @@
   },
   {
     "id": "adidas-thick",
-    "name": "Reversible Jacket — Adidas (Thick material)",
+    "name": "Reversible Jacket \u2014 Adidas (Thick material)",
     "sizes": [
       "XL",
       "5XL"
@@ -395,5 +395,35 @@
     ],
     "videoUrl": "",
     "badge": "Drop-Shoulder"
+  },
+  {
+    "id": "adidas-cny-blue",
+    "name": "Adidas Originals CNY Jacket (Blue)",
+    "sizes": [
+      "S",
+      "M"
+    ],
+    "price": 3799,
+    "currency": "INR",
+    "images": [
+      "assets/adidas-cny-blue-1.jpg"
+    ],
+    "videoUrl": "https://drive.google.com/file/d/1RThEYVSnOJAKxaQp4k2ZV07m1IOWle0O/preview",
+    "badge": "Premium Jacket"
+  },
+  {
+    "id": "adidas-cny-white",
+    "name": "Adidas Originals CNY Jacket (White)",
+    "sizes": [
+      "S",
+      "M"
+    ],
+    "price": 3799,
+    "currency": "INR",
+    "images": [
+      "assets/adidas-cny-white-1.jpg"
+    ],
+    "videoUrl": "https://drive.google.com/file/d/1Se8pMQChucmzM7ZyYlx7dX9D7FypYTdV/preview",
+    "badge": "Premium Jacket"
   }
 ]

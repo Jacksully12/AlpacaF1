@@ -2,8 +2,8 @@
 
 <html lang="en"><head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Ferrari Drop-Shoulder Tee — Alpaca F1 Jackets</title><link href="../styles.css" rel="stylesheet"/></head>
-<body class="no-size-warning">
+<title>Adidas Original Chinese New Year Jacket — Alpaca F1 Jackets</title><link href="../styles.css" rel="stylesheet"/></head>
+<body>
 <header class="site-header"><div class="container header-inner">
 <div class="brand"><span class="brand-logo">🏁</span><a class="brand-name" href="../index.html#/">Alpaca F1 Jackets</a></div>
 <nav class="nav"><a href="../index.html#/">Shop</a><a href="../reviews.html">Reviews</a><a href="../policies.html">Delivery &amp; Terms</a><a class="wh-cta" href="https://chat.whatsapp.com/Jd0HeHZ14IK7Cj0cV9jGwT?mode=ems_copy_t" target="_blank" rel="noopener" aria-label="Join our WhatsApp Community">
@@ -14,17 +14,24 @@
 </a></nav>
 </div></header>
 <main aria-live="polite" class="container" id="app">
-<div class="breadcrumbs"><a href="../index.html#/">Shop</a> / <span>Ferrari Drop-Shoulder Tee</span></div>
+<div class="breadcrumbs"><a href="../index.html#/">Shop</a> / <span>Adidas Original Chinese New Year Jacket</span></div>
 <div class="product">
 <div class="gallery">
 <div class="main-image" id="main"></div>
 <div class="thumbs" id="thumbs"></div>
 </div>
 <div class="product-panel">
-<div class="product-title">Ferrari Drop-Shoulder Tee</div>
-<div class="price">₹699</div>
-<div class="product-desc">Drop‑shoulder tee. WhatsApp checkout only.</div>
+<div class="product-title">Adidas Original Chinese New Year Jacket</div>
+<div class="price">₹3,799</div>
+<div class="product-desc">Premium Jacket. WhatsApp checkout only.</div>
 <div aria-label="Choose size" class="chips" id="sizeChips" role="group"></div>
+<div aria-label="Size chart" class="sizechart" role="region">
+<h3>Size chart (cm)</h3>
+<table aria-label="Jacket size chart in centimeters">
+<thead><tr><th>Size</th><th>Length</th><th>Chest</th><th>Sleeve</th><th>Shoulder</th></tr></thead>
+<tbody><tr><td>XL</td><td>75</td><td>63</td><td>70</td><td>53</td></tr><tr><td>2XL</td><td>80</td><td>66</td><td>74</td><td>58</td></tr></tbody>
+</table>
+<figure class="size-guide"><img alt="How to measure: length, chest, sleeve, shoulder" src="../assets/size-guide-chest.png"/><figcaption><strong>How to measure</strong><ul class="measure-list"><li>Length: top of shoulder to bottom hem.</li><li>Chest: measure flat from armpit seam to armpit seam (pit‑to‑pit);</li><li>Sleeve: shoulder seam to cuff.</li><li>Shoulder: seam to seam across the back.</li></ul></figcaption></figure></div>
 <div class="qty"><span>Qty</span><input id="qty" min="1" type="number" value="1"/></div>
 <div class="meta"><span class="badge">WhatsApp checkout</span><span class="badge">COD & Prepaid available</span><span class="badge">Pay via UPI / Bank Transfer</span></div>
 <div class="alert">Order opens WhatsApp with a pre-filled message.</div>
@@ -37,7 +44,7 @@
 <script>
 
 const WHATSAPP_NUMBER='918086009430';
-const product={"id": "drop-shoulder-1", "name": "Ferrari Drop-Shoulder Tee", "sizes": ["S", "M", "L", "XL"], "price": 699, "currency": "INR", "images": ["assets/dropshoulder-1-1.jpg", "assets/dropshoulder-1-2.jpg"], "videoUrl": "", "badge": "Drop-Shoulder"};
+const product={"id": "adidas-cny-white", "name": "Adidas Original Chinese New Year Jacket", "sizes": ["S", "M",], "price": 3799, "currency": "INR", "images": ["assets/adidas-cny-white-1.jpg"], "videoUrl": "https://drive.google.com/file/d/1Se8pMQChucmzM7ZyYlx7dX9D7FypYTdV/preview", "badge": "Premium Embroidery"};
 
 const qtyEl=document.getElementById('qty');
 const buyBtn=document.getElementById('buy');
@@ -76,7 +83,7 @@ function setMainDrive(src){
   b.className='chip';
   b.textContent=s;
   b.setAttribute('aria-pressed','false');
-  b.addEventListener('click',()=>{ document.querySelectorAll('.chip').forEach(x=>{x.classList.remove('active'); x.setAttribute('aria-pressed','false');}); b.classList.add('active'); b.setAttribute('aria-pressed','true'); });
+  b.addEventListener('click',()=>{ chosenSize=s; document.querySelectorAll('.chip[aria-pressed]').forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true'); });
   sizeChips.appendChild(b);
   if(i===0) { chosenSize=s; b.setAttribute('aria-pressed','true'); }
 });

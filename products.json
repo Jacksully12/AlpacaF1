@@ -342,5 +342,58 @@
     "videoUrl": "https://drive.google.com/file/d/1D2omnAZzSdYUtbHOL7Ym6dUIjpp-4DXr/preview",
     "videoUrl2": "https://drive.google.com/file/d/1GQpORFiRxWk72SD62DGwXNebt4OQJT8i/preview",
     "badge": "Wind Cheater"
+  },
+  {
+    "id": "drop-shoulder-1",
+    "name": "Ferrari Drop-Shoulder Tee",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 699,
+    "currency": "INR",
+    "images": [
+      "assets/dropshoulder-1-1.jpg",
+      "assets/dropshoulder-1-2.jpg"
+    ],
+    "videoUrl": "",
+    "badge": "Drop-Shoulder"
+  },
+  {
+    "id": "drop-shoulder-2",
+    "name": "Ferrari Drop-Shoulder Tee",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 699,
+    "currency": "INR",
+    "images": [
+      "assets/dropshoulder-2-1.jpg",
+      "assets/dropshoulder-2-2.jpg"
+    ],
+    "videoUrl": "",
+    "badge": "Drop-Shoulder"
+  },
+  {
+    "id": "drop-shoulder-3",
+    "name": "Red Drop-Shoulder",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 699,
+    "currency": "INR",
+    "images": [
+      "assets/dropshoulder-3-1.jpg"
+    ],
+    "videoUrl": "",
+    "badge": "Drop-Shoulder"
   }
 ]

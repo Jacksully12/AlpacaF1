@@ -401,3 +401,5 @@ img{max-width:100%;height:auto}
 /* Avoid 100vh issues on mobile browsers */
 :root{--vh:100dvh}
 .full-viewport{min-height:var(--vh)}
+
+.no-size-warning #sizeChips::after{content:none !important; display:none !important;}

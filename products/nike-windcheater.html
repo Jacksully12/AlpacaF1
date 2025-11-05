@@ -163,7 +163,9 @@ if(!main.querySelector('img,video,iframe') && imgs[0]) setMainImage('../'+imgs[0
 buyBtn.addEventListener('click',e=>{ 
   e.preventDefault(); 
   const qty = Math.max(1, parseInt(qtyEl.value||'1',10)); 
-  const msg = `Hi! I want to order: ${product.name} | Size: ${chosenSize} | Qty: ${qty}`; 
+  const pressed = document.querySelector('#sizeChips .chip[aria-pressed="true"]');
+  const size = pressed ? pressed.textContent : (chosenSize||'');
+  const msg = `Hi! I want to order: ${product.name} | Size: ${size} | Qty: ${qty}`; 
   const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=`+encodeURIComponent(msg); 
   window.open(wa,'_blank','noopener'); 
 });

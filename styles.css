@@ -403,3 +403,12 @@ img{max-width:100%;height:auto}
 .full-viewport{min-height:var(--vh)}
 
 .no-size-warning #sizeChips::after{content:none !important; display:none !important;}
+
+
+/* Make pressed size chips visibly active without changing JS */
+.chip[aria-pressed="true"]{
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: #031018;
+  box-shadow: 0 0 0 3px rgba(0,224,144,.15);
+}

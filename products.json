@@ -425,5 +425,51 @@
     ],
     "videoUrl": "https://drive.google.com/file/d/1Se8pMQChucmzM7ZyYlx7dX9D7FypYTdV/preview",
     "badge": "Premium Jacket"
+  },
+  {
+    "id": "ferrari-team-black",
+    "name": "Ferrari Black Jacket",
+    "sizes": [
+      "L"
+    ],
+    "price": 3699,
+    "currency": "INR",
+    "images": [
+      "assets/2.1.jpg",
+      "assets/2.2.jpg",
+      "assets/2.3.jpg"
+    ],
+    "videoUrl": "https://drive.google.com/file/d/1bJSUFi9ELieoQMFIY-WY1t9ZCsczJ_2a/preview",
+    "badge": "Premium Embroidery"
+  },
+  {
+    "id": "ferrari-team-white",
+    "name": "Ferrari Red White Jacket",
+    "sizes": [
+      "L"
+    ],
+    "price": 3699,
+    "currency": "INR",
+    "images": [
+      "assets/3.1.jpg",
+      "assets/3.2.jpg"
+    ],
+    "videoUrl": "https://drive.google.com/file/d/1ZN1ygnSnzkwaBE_krcQiRIHGy4eK__fn/preview",
+    "badge": "Premium Embroidery"
+  },
+  {
+    "id": "redbull-racing-navy",
+    "name": "Red Bull Racing Team Jacket",
+    "sizes": [
+      "L"
+    ],
+    "price": 3899,
+    "currency": "INR",
+    "images": [
+      "assets/1.1.jpg",
+      "assets/1.2.jpg"
+    ],
+    "videoUrl": "https://drive.google.com/file/d/1mwa36oVtiV4qq5_Qyhn8wpLMZnE9GbKq/preview",
+    "badge": "Premium Embroidery"
   }
 ]

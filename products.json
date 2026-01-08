@@ -347,8 +347,6 @@
     "id": "drop-shoulder-1",
     "name": "Ferrari Drop-Shoulder Tee",
     "sizes": [
-      "S",
-      "M",
       "L",
       "XL"
     ],
@@ -365,6 +363,8 @@
     "id": "drop-shoulder-2",
     "name": "Ferrari Drop-Shoulder Tee",
     "sizes": [
+      "S",
+      "M",
       "L",
       "XL"
     ],

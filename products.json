@@ -427,6 +427,7 @@
     "id": "ferrari-team-black",
     "name": "Ferrari Black Jacket",
     "sizes": [
+      "M",
       "L"
     ],
     "price": 3699,

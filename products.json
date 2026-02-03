@@ -343,57 +343,6 @@
     "badge": "Wind Cheater"
   },
   {
-    "id": "drop-shoulder-1",
-    "name": "Ferrari Drop-Shoulder Tee",
-    "sizes": [
-      "L",
-      "XL"
-    ],
-    "price": 699,
-    "currency": "INR",
-    "images": [
-      "assets/dropshoulder-1-1.jpg",
-      "assets/dropshoulder-1-2.jpg"
-    ],
-    "videoUrl": "",
-    "badge": "Drop-Shoulder"
-  },
-  {
-    "id": "drop-shoulder-2",
-    "name": "Ferrari Drop-Shoulder Tee",
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "price": 699,
-    "currency": "INR",
-    "images": [
-      "assets/dropshoulder-2-1.jpg",
-      "assets/dropshoulder-2-2.jpg"
-    ],
-    "videoUrl": "",
-    "badge": "Drop-Shoulder"
-  },
-  {
-    "id": "drop-shoulder-3",
-    "name": "Red Drop-Shoulder",
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "price": 699,
-    "currency": "INR",
-    "images": [
-      "assets/dropshoulder-3-1.jpg"
-    ],
-    "videoUrl": "",
-    "badge": "Drop-Shoulder"
-  },
-  {
     "id": "adidas-cny-blue",
     "name": "Adidas Originals CNY Jacket (Blue) (Out of stock)",
     "sizes": [

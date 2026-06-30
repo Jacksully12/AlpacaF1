@@ -988,3 +988,10 @@ body.video-modal-open { overflow: hidden; }
 .media-is-video .gallery-side-btn {
   display: none !important;
 }
+
+
+/* Mobile swipe support for product cards and gallery */
+.card-media,
+.main-image-shell {
+  touch-action: pan-y;
+}

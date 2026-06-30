@@ -273,6 +273,34 @@ function renderShop(products) {
 }
 
 
+function bindHorizontalSwipe(element, onSwipeLeft, onSwipeRight) {
+  if (!element) return;
+  let startX = 0;
+  let startY = 0;
+  let tracking = false;
+
+  element.addEventListener('touchstart', (event) => {
+    if (event.touches.length !== 1 || event.target.closest('button, a, iframe, video, input, select, textarea')) return;
+    tracking = true;
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+  }, { passive: true });
+
+  element.addEventListener('touchend', (event) => {
+    if (!tracking || !event.changedTouches.length) return;
+    const endX = event.changedTouches[0].clientX;
+    const endY = event.changedTouches[0].clientY;
+    const dx = endX - startX;
+    const dy = endY - startY;
+    tracking = false;
+
+    if (Math.abs(dx) < 42 || Math.abs(dx) < Math.abs(dy) * 1.25) return;
+    event.preventDefault();
+    if (dx < 0) onSwipeLeft?.();
+    else onSwipeRight?.();
+  }, { passive: false });
+}
+
 function bindProductCardPreviews(grid) {
   const canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
   $$('.card[data-card-images]', grid).forEach((card) => {
@@ -335,6 +363,20 @@ function bindProductCardPreviews(grid) {
 
     prevBtn?.addEventListener('click', (event) => stopAndSet(event, activeIndex - 1));
     nextBtn?.addEventListener('click', (event) => stopAndSet(event, activeIndex + 1));
+
+    let cardSwipeActive = false;
+    const swipeTo = (index) => {
+      stopHoverLoop();
+      cardSwipeActive = true;
+      setImage(index);
+      window.setTimeout(() => { cardSwipeActive = false; }, 250);
+    };
+    bindHorizontalSwipe(media, () => swipeTo(activeIndex + 1), () => swipeTo(activeIndex - 1));
+    card.addEventListener('click', (event) => {
+      if (!cardSwipeActive) return;
+      event.preventDefault();
+      event.stopPropagation();
+    });
 
     if (canHover) {
       card.addEventListener('mouseenter', startHoverLoop);
@@ -728,6 +770,11 @@ function renderProduct(products) {
 
   galleryPrevBtn?.addEventListener('click', () => showMediaAt(mediaIndex - 1));
   galleryNextBtn?.addEventListener('click', () => showMediaAt(mediaIndex + 1));
+  bindHorizontalSwipe(mainImageShell, () => {
+    if (mediaItems[mediaIndex]?.type !== 'video') showMediaAt(mediaIndex + 1);
+  }, () => {
+    if (mediaItems[mediaIndex]?.type !== 'video') showMediaAt(mediaIndex - 1);
+  });
   $$('[data-video-close]').forEach((button) => button.addEventListener('click', closeVideoModal));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeVideoModal();

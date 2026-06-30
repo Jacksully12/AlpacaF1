@@ -565,15 +565,89 @@ function renderProduct(products) {
     if (stickyStockText) stickyStockText.textContent = `${selectedSize} · ${visibleStock === 1 ? '1 left' : `${visibleStock} left`}`;
   }
 
-  function shouldUseVideoModalOnMobile() {
-    return window.matchMedia && window.matchMedia('(max-width: 720px), (pointer: coarse)').matches;
+  function driveFileId(src) {
+    const match = String(src || '').match(/\/d\/([^/]+)/) || String(src || '').match(/[?&]id=([^&]+)/);
+    return match ? match[1] : '';
   }
 
-  function videoEmbedHtml(src, modal = false) {
-    if (/drive\.google\.com/.test(src)) {
-      return `<iframe src="${escapeHtml(src)}" title="${escapeHtml(product.name)} video" allow="autoplay; fullscreen" loading="lazy"></iframe>`;
-    }
-    return `<video src="${escapeHtml(src)}" ${modal ? 'autoplay ' : ''}controls playsinline preload="metadata"></video>`;
+  function cleanVideoSource(src) {
+    const id = driveFileId(src);
+    if (id) return `https://drive.google.com/uc?export=download&id=${encodeURIComponent(id)}`;
+    return src;
+  }
+
+  function videoEmbedHtml(src) {
+    const cleanSrc = cleanVideoSource(src);
+    return `
+      <div class="custom-video-player" data-video-player data-original-video="${escapeHtml(src)}">
+        <video class="custom-video" src="${escapeHtml(cleanSrc)}" playsinline preload="metadata"></video>
+        <div class="custom-video-error" hidden>Video could not load in the clean player. Please check the Drive sharing permission.</div>
+        <div class="custom-video-bar" aria-label="Video controls">
+          <button class="custom-video-btn" type="button" data-video-toggle aria-label="Play video">▶</button>
+          <input class="custom-video-progress" type="range" min="0" max="100" value="0" step="0.1" data-video-progress aria-label="Video progress">
+          <span class="custom-video-time" data-video-time>0:00 / 0:00</span>
+          <button class="custom-video-btn" type="button" data-video-mute aria-label="Mute video">🔊</button>
+        </div>
+      </div>`;
+  }
+
+  function bindCustomVideoPlayer(scope) {
+    const player = $('[data-video-player]', scope);
+    if (!player) return;
+    const video = $('.custom-video', player);
+    const toggle = $('[data-video-toggle]', player);
+    const progress = $('[data-video-progress]', player);
+    const time = $('[data-video-time]', player);
+    const mute = $('[data-video-mute]', player);
+    const error = $('.custom-video-error', player);
+    if (!video || !toggle || !progress || !time) return;
+
+    const fmt = (seconds) => {
+      const value = Number.isFinite(seconds) ? Math.max(0, seconds) : 0;
+      const m = Math.floor(value / 60);
+      const s = Math.floor(value % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    };
+
+    const update = () => {
+      const duration = Number.isFinite(video.duration) ? video.duration : 0;
+      progress.value = duration ? String((video.currentTime / duration) * 100) : '0';
+      time.textContent = `${fmt(video.currentTime)} / ${fmt(duration)}`;
+      toggle.textContent = video.paused ? '▶' : 'Ⅱ';
+      toggle.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+      if (mute) mute.textContent = video.muted ? '🔇' : '🔊';
+    };
+
+    toggle.addEventListener('click', async () => {
+      try {
+        if (video.paused) await video.play();
+        else video.pause();
+      } catch {
+        if (error) error.hidden = false;
+      }
+      update();
+    });
+
+    video.addEventListener('click', () => toggle.click());
+    video.addEventListener('loadedmetadata', update);
+    video.addEventListener('timeupdate', update);
+    video.addEventListener('play', update);
+    video.addEventListener('pause', update);
+    video.addEventListener('ended', update);
+    video.addEventListener('error', () => { if (error) error.hidden = false; });
+
+    progress.addEventListener('input', () => {
+      const duration = Number.isFinite(video.duration) ? video.duration : 0;
+      if (duration) video.currentTime = (Number(progress.value) / 100) * duration;
+      update();
+    });
+
+    mute?.addEventListener('click', () => {
+      video.muted = !video.muted;
+      update();
+    });
+
+    update();
   }
 
   function setMainImage(src) {
@@ -605,14 +679,11 @@ function renderProduct(products) {
   }
 
   function setMainVideo(src) {
-    if (shouldUseVideoModalOnMobile()) {
-      openVideoModal(src);
-      return;
-    }
     mainMedia.classList.remove('media-image', 'media-video-link');
     mainMedia.classList.add('media-video');
     mainImageShell?.classList.add('media-is-video');
     mainMedia.innerHTML = videoEmbedHtml(src);
+    bindCustomVideoPlayer(mainMedia);
   }
 
   function activateThumb(thumb) {

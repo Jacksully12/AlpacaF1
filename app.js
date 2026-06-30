@@ -558,15 +558,45 @@ function renderProduct(products) {
     if (stickyStockText) stickyStockText.textContent = `${selectedSize} · ${visibleStock === 1 ? '1 left' : `${visibleStock} left`}`;
   }
 
+  function shouldOpenVideoSeparatelyOnMobile() {
+    return window.matchMedia && window.matchMedia('(max-width: 720px), (pointer: coarse)').matches;
+  }
+
   function setMainImage(src) {
-    mainMedia.classList.remove('media-video');
+    mainMedia.classList.remove('media-video', 'media-video-link');
     mainMedia.classList.add('media-image');
     mainImageShell?.classList.remove('media-is-video');
     mainMedia.innerHTML = `<img src="${escapeHtml(src)}" alt="${escapeHtml(product.name)}" loading="eager">`;
   }
 
-  function setMainVideo(src) {
+  function setMobileVideoLink(src) {
     mainMedia.classList.remove('media-image');
+    mainMedia.classList.add('media-video', 'media-video-link');
+    mainImageShell?.classList.remove('media-is-video');
+    const poster = images[0] || '';
+    mainMedia.innerHTML = `
+      <div class="mobile-video-card">
+        ${poster ? `<img src="${escapeHtml(poster)}" alt="${escapeHtml(product.name)} video preview" loading="lazy">` : ''}
+        <div class="mobile-video-overlay">
+          <span class="mobile-video-play">▶</span>
+          <strong>Product video</strong>
+          <small>Open the video separately for smoother mobile playback.</small>
+          <button class="btn btn-primary mobile-video-open" type="button">Open video</button>
+        </div>
+      </div>`;
+    $('.mobile-video-open', mainMedia)?.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      window.open(src, '_blank', 'noopener');
+    });
+  }
+
+  function setMainVideo(src) {
+    if (shouldOpenVideoSeparatelyOnMobile()) {
+      setMobileVideoLink(src);
+      return;
+    }
+    mainMedia.classList.remove('media-image', 'media-video-link');
     mainMedia.classList.add('media-video');
     mainImageShell?.classList.add('media-is-video');
     if (/drive\.google\.com/.test(src)) {

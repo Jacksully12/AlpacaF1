@@ -274,6 +274,7 @@ function renderShop(products) {
 
 
 function bindProductCardPreviews(grid) {
+  const canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
   $$('.card[data-card-images]', grid).forEach((card) => {
     let images = [];
     let hoverImages = [];
@@ -283,18 +284,12 @@ function bindProductCardPreviews(grid) {
     if (!hoverImages || hoverImages.length < 2) hoverImages = images.slice(0, Math.min(3, images.length));
 
     const imageEl = $('.card-media-image', card);
+    const media = $('.card-media', card);
     const prevBtn = $('[data-image-prev]', card);
     const nextBtn = $('[data-image-next]', card);
     let activeIndex = 0;
     let hoverIndex = 0;
     let hoverTimer = null;
-
-    // Preload preview images so the hover cycle feels consistent instead of waiting
-    // for the next image to download after the timer fires.
-    [...new Set([...images, ...hoverImages])].forEach((src) => {
-      const preload = new Image();
-      preload.src = src;
-    });
 
     const setImage = (index) => {
       const nextIndex = (index + images.length) % images.length;
@@ -316,7 +311,7 @@ function bindProductCardPreviews(grid) {
     };
 
     const scheduleHoverLoop = () => {
-      const delay = hoverIndex === 0 ? 250 : 525;
+      const delay = hoverIndex === 0 ? 425 : 525;
       hoverTimer = window.setTimeout(() => {
         setHoverImage(hoverIndex + 1);
         scheduleHoverLoop();
@@ -324,7 +319,7 @@ function bindProductCardPreviews(grid) {
     };
 
     const startHoverLoop = () => {
-      if (!hoverImages.length) return;
+      if (!canHover || !hoverImages.length || !media) return;
       stopHoverLoop();
       hoverIndex = 0;
       setHoverImage(0);
@@ -341,14 +336,13 @@ function bindProductCardPreviews(grid) {
     prevBtn?.addEventListener('click', (event) => stopAndSet(event, activeIndex - 1));
     nextBtn?.addEventListener('click', (event) => stopAndSet(event, activeIndex + 1));
 
-    // Use the whole card, not only the image area. This makes the auto preview
-    // more reliable on desktop because the loop does not stop when the cursor
-    // is still on the card but not exactly over the image.
-    card.addEventListener('mouseenter', startHoverLoop);
-    card.addEventListener('mouseleave', () => {
-      stopHoverLoop();
-      setImage(0);
-    });
+    if (canHover) {
+      card.addEventListener('mouseenter', startHoverLoop);
+      card.addEventListener('mouseleave', () => {
+        stopHoverLoop();
+        setImage(0);
+      });
+    }
   });
 }
 
@@ -527,6 +521,7 @@ function renderProduct(products) {
     </div>`;
 
   const mainMedia = $('#mainMedia');
+  const mainImageShell = $('.main-image-shell');
   const thumbs = $('#thumbs');
   const galleryPrevBtn = $('#galleryPrevBtn');
   const galleryNextBtn = $('#galleryNextBtn');
@@ -564,14 +559,20 @@ function renderProduct(products) {
   }
 
   function setMainImage(src) {
+    mainMedia.classList.remove('media-video');
+    mainMedia.classList.add('media-image');
+    mainImageShell?.classList.remove('media-is-video');
     mainMedia.innerHTML = `<img src="${escapeHtml(src)}" alt="${escapeHtml(product.name)}" loading="eager">`;
   }
 
   function setMainVideo(src) {
+    mainMedia.classList.remove('media-image');
+    mainMedia.classList.add('media-video');
+    mainImageShell?.classList.add('media-is-video');
     if (/drive\.google\.com/.test(src)) {
       mainMedia.innerHTML = `<iframe src="${escapeHtml(src)}" title="${escapeHtml(product.name)} video" allow="autoplay; fullscreen" loading="lazy"></iframe>`;
     } else {
-      mainMedia.innerHTML = `<video src="${escapeHtml(src)}" controls playsinline></video>`;
+      mainMedia.innerHTML = `<video src="${escapeHtml(src)}" controls playsinline preload="metadata"></video>`;
     }
   }
 

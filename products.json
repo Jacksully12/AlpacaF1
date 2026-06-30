@@ -3,420 +3,747 @@
     "id": "jacket-1",
     "name": "Aston Martin (Print)",
     "sizes": [
-      "2XL"
+      {
+        "label": "2XL",
+        "stock": 1
+      }
     ],
     "price": 3199,
     "currency": "INR",
     "images": [
-      "assets/jacket-1-1.jpeg",
-      "assets/jacket-1-2.jpeg"
+      "assets/jacket-1-1.webp",
+      "assets/jacket-1-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1PiUskPS2JOsnsy-QlP-I1_OGQE0Iz46v/preview",
-    "badge": "Print"
+    "badge": "Print",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Print",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1PiUskPS2JOsnsy-QlP-I1_OGQE0Iz46v/preview"
+    ],
+    "description": "Aston Martin (Print) with a clean motorsport print look and teamwear-inspired styling. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-2",
     "name": "Mercedes Grey White",
     "sizes": [
-      "M",
-      "L"
+      {
+        "label": "M",
+        "stock": 2
+      },
+      {
+        "label": "L",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-2-1.jpeg",
-      "assets/jacket-2-2.jpeg"
+      "assets/jacket-2-1.webp",
+      "assets/jacket-2-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/12En33ymCUawHl_wNqI4a8fH8RrN_JDKS/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/12En33ymCUawHl_wNqI4a8fH8RrN_JDKS/preview"
+    ],
+    "description": "Mercedes Grey White with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-3",
     "name": "Ferrari Yellow",
     "sizes": [
-      "3XL"
+      {
+        "label": "3XL",
+        "stock": 1
+      }
     ],
     "price": 3699,
     "currency": "INR",
     "images": [
-      "assets/jacket-3-1.jpeg",
-      "assets/jacket-3-2.jpeg"
+      "assets/jacket-3-1.webp",
+      "assets/jacket-3-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1uSzADf4KqpsCqGnPV1rCWACfExVWrVML/preview",
-    "badge": "Premium Embroidery"
+    "badge": "Premium Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Premium Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1uSzADf4KqpsCqGnPV1rCWACfExVWrVML/preview"
+    ],
+    "description": "Ferrari Yellow with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-4",
     "name": "Ferrari Red",
     "sizes": [
-      "M",
-      "L",
-      "XL",
-      "2XL"
+      {
+        "label": "L",
+        "stock": 1
+      },
+      {
+        "label": "2XL",
+        "stock": 2
+      }
     ],
     "price": 3699,
     "currency": "INR",
     "images": [
-      "assets/jacket-4-1.jpeg",
-      "assets/jacket-4-2.jpeg"
+      "assets/jacket-4-1.webp",
+      "assets/jacket-4-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1RXdF1hYvQcmRru9JxeEoMB-xucFJHtwX/preview",
-    "badge": "Premium Embroidery"
+    "badge": "Premium Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Premium Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1RXdF1hYvQcmRru9JxeEoMB-xucFJHtwX/preview"
+    ],
+    "description": "Ferrari Red with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-5",
     "name": "BMW Blue",
-    "sizes": [
-      "M"
-    ],
+    "sizes": [],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-5-1.jpeg",
-      "assets/jacket-5-2.jpeg"
+      "assets/jacket-5-1.webp",
+      "assets/jacket-5-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1Bh1pySXAflgbPgfMGU_hOZf_8d1Ex2v7/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "out_of_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1Bh1pySXAflgbPgfMGU_hOZf_8d1Ex2v7/preview"
+    ],
+    "description": "BMW Blue with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-6",
     "name": "Red Black Mercedes",
     "sizes": [
-      "M"
+      {
+        "label": "M",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-6-1.jpeg",
-      "assets/jacket-6-2.jpeg"
+      "assets/jacket-6-1.webp",
+      "assets/jacket-6-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1yy3FLyTqaElhNIHejzD1lfSpq569lR8Z/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1yy3FLyTqaElhNIHejzD1lfSpq569lR8Z/preview"
+    ],
+    "description": "Red Black Mercedes with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-8",
     "name": "Mercedes Black",
     "sizes": [
-      "L"
+      {
+        "label": "L",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-8-1.jpeg",
-      "assets/jacket-8-2.jpeg"
+      "assets/jacket-8-1.webp",
+      "assets/jacket-8-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1TAutz6BY2BGANIpVpB5Llv0i4ux4O1hW/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1TAutz6BY2BGANIpVpB5Llv0i4ux4O1hW/preview"
+    ],
+    "description": "Mercedes Black with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-9",
     "name": "Red Bull Print",
     "sizes": [
-      "M"
+      {
+        "label": "M",
+        "stock": 0
+      }
     ],
     "price": 3199,
     "currency": "INR",
     "images": [
-      "assets/jacket-9-1.jpeg",
-      "assets/jacket-9-2.jpeg"
+      "assets/jacket-9-1.webp",
+      "assets/jacket-9-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1XrRtbCOshpo0zGkm6WeJ8TQTVWRYf3ck/preview",
-    "badge": "Print"
+    "badge": "Print",
+    "status": "out_of_stock",
+    "category": "F1 Jacket",
+    "type": "Print",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1XrRtbCOshpo0zGkm6WeJ8TQTVWRYf3ck/preview"
+    ],
+    "description": "Red Bull Print with a clean motorsport print look and teamwear-inspired styling. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-10",
     "name": "Volkswagen",
     "sizes": [
-      "L",
-      "M"
+      {
+        "label": "M",
+        "stock": 1
+      },
+      {
+        "label": "L",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-10-1.jpeg",
-      "assets/jacket-10-2.jpeg"
+      "assets/jacket-10-1.webp",
+      "assets/vw-front-model.webp",
+      "assets/vw-back-model.webp",
+      "assets/jacket-10-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1yJ0wFhuJxIRPUnOxhbcTqdfkJ39ti_32/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1yJ0wFhuJxIRPUnOxhbcTqdfkJ39ti_32/preview"
+    ],
+    "description": "Volkswagen with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-11",
     "name": "Petronas Print",
     "sizes": [
-      "XL",
-      "2XL"
+      {
+        "label": "XL",
+        "stock": 1
+      },
+      {
+        "label": "2XL",
+        "stock": 1
+      }
     ],
     "price": 3199,
     "currency": "INR",
     "images": [
-      "assets/jacket-11-1.jpeg",
-      "assets/jacket-11-2.jpeg"
+      "assets/jacket-11-1.webp",
+      "assets/mercedes-black-model.webp",
+      "assets/jacket-11-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1iw4Y12x6FGT1nEUx97hq1FYqXORegzf2/preview",
-    "badge": "Print"
+    "badge": "Print",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Print",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1iw4Y12x6FGT1nEUx97hq1FYqXORegzf2/preview"
+    ],
+    "description": "Petronas Print with a clean motorsport print look and teamwear-inspired styling. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-12",
     "name": "White Red Mercedes",
     "sizes": [
-      "XL"
+      {
+        "label": "XL",
+        "stock": 2
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-12-1.jpeg",
-      "assets/jacket-12-2.jpeg"
+      "assets/jacket-12-1.webp",
+      "assets/jacket-12-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1QAfvj8-anHEpY38maKky-ITEsHWR6zq8/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1QAfvj8-anHEpY38maKky-ITEsHWR6zq8/preview"
+    ],
+    "description": "White Red Mercedes with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-13",
     "name": "BMW White Blue",
     "sizes": [
-      "M",
-      "L",
-      "2XL"
+      {
+        "label": "M",
+        "stock": 1
+      },
+      {
+        "label": "2XL",
+        "stock": 3
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-13-1.jpeg",
-      "assets/jacket-13-2.jpeg"
+      "assets/jacket-13-1.webp",
+      "assets/jacket-13-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1Bh1pySXAflgbPgfMGU_hOZf_8d1Ex2v7/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1Bh1pySXAflgbPgfMGU_hOZf_8d1Ex2v7/preview"
+    ],
+    "description": "BMW White Blue with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-14",
     "name": "Jack Daniels",
     "sizes": [
-      "M"
+      {
+        "label": "M",
+        "stock": 6
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-14-1.jpeg",
-      "assets/jacket-14-2.jpeg"
+      "assets/jacket-14-1.webp",
+      "assets/jacket-14-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1IV4nvH0fM3JgsccdVuUth-xJp0S8nwtu/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1IV4nvH0fM3JgsccdVuUth-xJp0S8nwtu/preview"
+    ],
+    "description": "Jack Daniels with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-15",
     "name": "Mercedes White",
     "sizes": [
-      "2XL"
+      {
+        "label": "2XL",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-15-1.jpg",
-      "assets/jacket-15-2.jpg"
+      "assets/jacket-15-1.webp",
+      "assets/jacket-15-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1HIzZcDqZb5kFDWZfm0ruZClIe4gcgFax/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1HIzZcDqZb5kFDWZfm0ruZClIe4gcgFax/preview"
+    ],
+    "description": "Mercedes White with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-16",
-    "name": "Black Red Mercedes (Out of stock)",
-    "sizes": [
-      "M"
-    ],
+    "name": "Black Red Mercedes",
+    "sizes": [],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-16-1.jpg",
-      "assets/jacket-16-2.jpg"
+      "assets/jacket-16-1.webp",
+      "assets/jacket-16-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1JtAhcQR_zbzSf4ANz7GY0tMeJeQBdqeK/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "out_of_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1JtAhcQR_zbzSf4ANz7GY0tMeJeQBdqeK/preview"
+    ],
+    "description": "Black Red Mercedes with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-17",
     "name": "Harley Orange",
     "sizes": [
-      "2XL"
+      {
+        "label": "2XL",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-17-1.jpg",
-      "assets/jacket-17-2.jpg"
+      "assets/jacket-17-1.webp",
+      "assets/jacket-17-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1JXEfwjXnSVeKfh7P-rraZ74f8LlOArfq/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1JXEfwjXnSVeKfh7P-rraZ74f8LlOArfq/preview"
+    ],
+    "description": "Harley Orange with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-18",
     "name": "Budweiser",
     "sizes": [
-      "M"
+      {
+        "label": "M",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-18-1.jpg",
-      "assets/jacket-18-2.jpg"
+      "assets/jacket-18-1.webp",
+      "assets/jacket-18-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1nTC3bJfWJlsbPEiiXQQ9tM3Y0xCPVd4g/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1nTC3bJfWJlsbPEiiXQQ9tM3Y0xCPVd4g/preview"
+    ],
+    "description": "Budweiser with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-19",
     "name": "Harley Black",
     "sizes": [
-      "L",
-      "XL"
+      {
+        "label": "L",
+        "stock": 0
+      },
+      {
+        "label": "XL",
+        "stock": 0
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-19-1.jpg",
-      "assets/jacket-19-2.jpg"
+      "assets/jacket-19-1.webp",
+      "assets/jacket-19-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1wJ4OrpMJAp0XrYk1y1OT_Nd4a-a9HpYv/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "out_of_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1wJ4OrpMJAp0XrYk1y1OT_Nd4a-a9HpYv/preview"
+    ],
+    "description": "Harley Black with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-20",
     "name": "Manchester United",
     "sizes": [
-      "L",
-      "XL"
+      {
+        "label": "L",
+        "stock": 1
+      },
+      {
+        "label": "XL",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-20-1.jpg",
-      "assets/jacket-20-2.jpg"
+      "assets/jacket-20-1.webp",
+      "assets/jacket-20-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1Qe4g-M2uLcLshkHJsnxUV_MzTvLX-2--/preview",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1Qe4g-M2uLcLshkHJsnxUV_MzTvLX-2--/preview"
+    ],
+    "description": "Manchester United with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-21",
     "name": "Subaru",
     "sizes": [
-      "L"
+      {
+        "label": "XL",
+        "stock": 1
+      }
     ],
     "price": 3250,
     "currency": "INR",
     "images": [
-      "assets/jacket-21-1.jpg"
+      "assets/jacket-21-1.webp"
     ],
     "videoUrl": "",
-    "badge": "Standard Embroidery"
+    "badge": "Standard Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Standard Embroidery",
+    "featured": true,
+    "videoUrls": [],
+    "description": "Subaru with motorsport-inspired detailing and a clean teamwear jacket look. Please compare the measurements before confirming your order."
   },
   {
     "id": "adidas-thick",
-    "name": "Reversible Jacket \u2014 Adidas (Thick material)",
+    "name": "Reversible Jacket — Adidas (Thick material)",
     "sizes": [
-      "XL",
-      "5XL"
+      {
+        "label": "XL",
+        "stock": 1
+      },
+      {
+        "label": "5XL",
+        "stock": 1
+      }
     ],
     "price": 2999,
     "currency": "INR",
     "images": [
-      "assets/adidas-thick-1.jpg"
+      "assets/adidas-thick-1.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1BrLaRHHqaD3XFYw2dBQ68Cg63xH2weHx/preview",
-    "badge": "Adidas Jacket"
+    "badge": "Adidas Jacket",
+    "status": "in_stock",
+    "category": "Reversible Jacket",
+    "type": "Adidas Jacket",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1BrLaRHHqaD3XFYw2dBQ68Cg63xH2weHx/preview"
+    ],
+    "description": "Reversible Jacket — Adidas (Thick material) with a versatile reversible-style look and premium streetwear finish. Please compare the measurements before confirming your order."
   },
   {
     "id": "nike-windcheater",
     "name": "Nike Windcheater with detachable hood (Matte and Shiny)",
     "sizes": [
-      "XL",
-      "XXL",
-      "3XL",
-      "4XL"
+      {
+        "label": "XL",
+        "stock": 1
+      },
+      {
+        "label": "2XL",
+        "stock": 1
+      },
+      {
+        "label": "3XL",
+        "stock": 1
+      },
+      {
+        "label": "4XL",
+        "stock": 1
+      }
     ],
     "price": 1899,
     "currency": "INR",
     "images": [
-      "assets/nike-windcheater-grey.jpg",
-      "assets/nike-windcheater-black.jpg"
+      "assets/nike-windcheater-grey.webp",
+      "assets/nike-windcheater-black.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1D2omnAZzSdYUtbHOL7Ym6dUIjpp-4DXr/preview",
-    "videoUrl2": "https://drive.google.com/file/d/1GQpORFiRxWk72SD62DGwXNebt4OQJT8i/preview",
-    "badge": "Wind Cheater"
+    "badge": "Wind Cheater",
+    "status": "in_stock",
+    "category": "Windcheater",
+    "type": "Wind Cheater",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1D2omnAZzSdYUtbHOL7Ym6dUIjpp-4DXr/preview",
+      "https://drive.google.com/file/d/1GQpORFiRxWk72SD62DGwXNebt4OQJT8i/preview"
+    ],
+    "description": "Nike Windcheater with detachable hood (Matte and Shiny) with a lightweight motorsport streetwear look, made for easy layering and daily wear. Please compare the measurements before confirming your order."
   },
   {
     "id": "adidas-cny-blue",
-    "name": "Adidas Originals CNY Jacket (Blue) (Out of stock)",
+    "name": "Adidas Originals CNY Jacket (Blue)",
     "sizes": [
-      "S",
-      "M"
+      {
+        "label": "S",
+        "stock": 0
+      },
+      {
+        "label": "M",
+        "stock": 0
+      }
     ],
     "price": 3899,
     "currency": "INR",
     "images": [
-      "assets/adidas-cny-blue-1.jpg"
+      "assets/adidas-cny-blue-1.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1RThEYVSnOJAKxaQp4k2ZV07m1IOWle0O/preview",
-    "badge": "Premium Jacket"
+    "badge": "Premium Jacket",
+    "status": "out_of_stock",
+    "category": "F1 Jacket",
+    "type": "Premium Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1RThEYVSnOJAKxaQp4k2ZV07m1IOWle0O/preview"
+    ],
+    "description": "Adidas Originals CNY Jacket (Blue) with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
   },
   {
     "id": "adidas-cny-white",
     "name": "Adidas Originals CNY Jacket (Beige)",
     "sizes": [
-      "S",
-      "M"
+      {
+        "label": "S",
+        "stock": 1
+      },
+      {
+        "label": "M",
+        "stock": 1
+      }
     ],
     "price": 3899,
     "currency": "INR",
     "images": [
-      "assets/adidas-cny-white-1.jpg"
+      "assets/adidas-cny-white-1.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1Se8pMQChucmzM7ZyYlx7dX9D7FypYTdV/preview",
-    "badge": "Premium Jacket"
+    "badge": "Premium Jacket",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Premium Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1Se8pMQChucmzM7ZyYlx7dX9D7FypYTdV/preview"
+    ],
+    "description": "Adidas Originals CNY Jacket (Beige) with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
   },
   {
     "id": "ferrari-team-black",
     "name": "Ferrari Black Jacket",
     "sizes": [
-      "M",
-      "L"
+      {
+        "label": "M",
+        "stock": 1
+      },
+      {
+        "label": "L",
+        "stock": 0
+      }
     ],
     "price": 3699,
     "currency": "INR",
     "images": [
-      "assets/2.1.jpg",
-      "assets/2.2.jpg",
-      "assets/2.3.jpg"
+      "assets/2.1.webp",
+      "assets/2.2.webp",
+      "assets/2.3.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1bJSUFi9ELieoQMFIY-WY1t9ZCsczJ_2a/preview",
-    "badge": "Premium Embroidery"
+    "badge": "Premium Embroidery",
+    "status": "in_stock",
+    "category": "F1 Jacket",
+    "type": "Premium Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1bJSUFi9ELieoQMFIY-WY1t9ZCsczJ_2a/preview"
+    ],
+    "description": "Ferrari Black Jacket with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
   },
   {
     "id": "ferrari-team-white",
     "name": "Ferrari Red White Jacket",
     "sizes": [
-      "L"
+      {
+        "label": "L",
+        "stock": 0
+      }
     ],
     "price": 3699,
     "currency": "INR",
     "images": [
-      "assets/3.1.jpg",
-      "assets/3.2.jpg"
+      "assets/3.1.webp",
+      "assets/3.2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1ZN1ygnSnzkwaBE_krcQiRIHGy4eK__fn/preview",
-    "badge": "Premium Embroidery"
+    "badge": "Premium Embroidery",
+    "status": "out_of_stock",
+    "category": "F1 Jacket",
+    "type": "Premium Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1ZN1ygnSnzkwaBE_krcQiRIHGy4eK__fn/preview"
+    ],
+    "description": "Ferrari Red White Jacket with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
   },
   {
     "id": "redbull-racing-navy",
-    "name": "Red Bull Racing Team Jacket (Out of stock)",
+    "name": "Red Bull Racing Team Jacket",
     "sizes": [
-      "L"
+      {
+        "label": "L",
+        "stock": 0
+      }
     ],
     "price": 3899,
     "currency": "INR",
     "images": [
-      "assets/1.1.jpg",
-      "assets/1.2.jpg"
+      "assets/1.1.webp",
+      "assets/1.2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1mwa36oVtiV4qq5_Qyhn8wpLMZnE9GbKq/preview",
-    "badge": "Premium Embroidery"
+    "badge": "Premium Embroidery",
+    "status": "out_of_stock",
+    "category": "F1 Jacket",
+    "type": "Premium Embroidery",
+    "featured": true,
+    "videoUrls": [
+      "https://drive.google.com/file/d/1mwa36oVtiV4qq5_Qyhn8wpLMZnE9GbKq/preview"
+    ],
+    "description": "Red Bull Racing Team Jacket with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
   }
 ]

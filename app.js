@@ -570,18 +570,25 @@ function renderProduct(products) {
     return match ? match[1] : '';
   }
 
-  function cleanVideoSource(src) {
+  function drivePreviewUrl(src) {
     const id = driveFileId(src);
-    if (id) return `https://drive.google.com/uc?export=download&id=${encodeURIComponent(id)}`;
+    if (id) return `https://drive.google.com/file/d/${encodeURIComponent(id)}/preview`;
     return src;
   }
 
+  function isDriveVideo(src) {
+    return /drive\.google\.com/i.test(String(src || '')) || Boolean(driveFileId(src));
+  }
+
   function videoEmbedHtml(src) {
-    const cleanSrc = cleanVideoSource(src);
+    if (isDriveVideo(src)) {
+      return `<iframe class="drive-video-embed" src="${escapeHtml(drivePreviewUrl(src))}" title="${escapeHtml(product.name)} video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+    }
+
     return `
       <div class="custom-video-player" data-video-player data-original-video="${escapeHtml(src)}">
-        <video class="custom-video" src="${escapeHtml(cleanSrc)}" playsinline preload="metadata"></video>
-        <div class="custom-video-error" hidden>Video could not load in the clean player. Please check the Drive sharing permission.</div>
+        <video class="custom-video" src="${escapeHtml(src)}" playsinline preload="metadata"></video>
+        <div class="custom-video-error" hidden>Video could not load. Please check the video file path.</div>
         <div class="custom-video-bar" aria-label="Video controls">
           <button class="custom-video-btn" type="button" data-video-toggle aria-label="Play video">▶</button>
           <input class="custom-video-progress" type="range" min="0" max="100" value="0" step="0.1" data-video-progress aria-label="Video progress">

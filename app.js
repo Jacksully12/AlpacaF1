@@ -518,6 +518,13 @@ function renderProduct(products) {
     <div class="sticky-order-bar" aria-label="Quick WhatsApp order">
       <div><strong>${formatPrice(product.price, product.currency)}</strong><span id="stickyStockText">${escapeHtml(stockLabel(product))}</span></div>
       <button class="btn btn-primary" id="stickyBuyBtn" type="button" ${isOut ? 'disabled' : ''}>Order on WhatsApp</button>
+    </div>
+    <div class="video-modal" id="videoModal" hidden aria-hidden="true">
+      <div class="video-modal-backdrop" data-video-close></div>
+      <section class="video-modal-panel" role="dialog" aria-modal="true" aria-label="Product video">
+        <button class="video-modal-close" type="button" data-video-close aria-label="Close video">×</button>
+        <div class="video-modal-content" id="videoModalContent"></div>
+      </section>
     </div>`;
 
   const mainMedia = $('#mainMedia');
@@ -558,8 +565,15 @@ function renderProduct(products) {
     if (stickyStockText) stickyStockText.textContent = `${selectedSize} · ${visibleStock === 1 ? '1 left' : `${visibleStock} left`}`;
   }
 
-  function shouldOpenVideoSeparatelyOnMobile() {
+  function shouldUseVideoModalOnMobile() {
     return window.matchMedia && window.matchMedia('(max-width: 720px), (pointer: coarse)').matches;
+  }
+
+  function videoEmbedHtml(src, modal = false) {
+    if (/drive\.google\.com/.test(src)) {
+      return `<iframe src="${escapeHtml(src)}" title="${escapeHtml(product.name)} video" allow="autoplay; fullscreen" loading="lazy"></iframe>`;
+    }
+    return `<video src="${escapeHtml(src)}" ${modal ? 'autoplay ' : ''}controls playsinline preload="metadata"></video>`;
   }
 
   function setMainImage(src) {
@@ -569,41 +583,36 @@ function renderProduct(products) {
     mainMedia.innerHTML = `<img src="${escapeHtml(src)}" alt="${escapeHtml(product.name)}" loading="eager">`;
   }
 
-  function setMobileVideoLink(src) {
-    mainMedia.classList.remove('media-image');
-    mainMedia.classList.add('media-video', 'media-video-link');
-    mainImageShell?.classList.remove('media-is-video');
-    const poster = images[0] || '';
-    mainMedia.innerHTML = `
-      <div class="mobile-video-card">
-        ${poster ? `<img src="${escapeHtml(poster)}" alt="${escapeHtml(product.name)} video preview" loading="lazy">` : ''}
-        <div class="mobile-video-overlay">
-          <span class="mobile-video-play">▶</span>
-          <strong>Product video</strong>
-          <small>Open the video separately for smoother mobile playback.</small>
-          <button class="btn btn-primary mobile-video-open" type="button">Open video</button>
-        </div>
-      </div>`;
-    $('.mobile-video-open', mainMedia)?.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      window.open(src, '_blank', 'noopener');
-    });
+  function openVideoModal(src) {
+    const modal = $('#videoModal');
+    const content = $('#videoModalContent');
+    if (!modal || !content) return;
+    content.innerHTML = videoEmbedHtml(src, true);
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('video-modal-open');
+    $('.video-modal-close', modal)?.focus();
+  }
+
+  function closeVideoModal() {
+    const modal = $('#videoModal');
+    const content = $('#videoModalContent');
+    if (!modal || !content) return;
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    content.innerHTML = '';
+    document.body.classList.remove('video-modal-open');
   }
 
   function setMainVideo(src) {
-    if (shouldOpenVideoSeparatelyOnMobile()) {
-      setMobileVideoLink(src);
+    if (shouldUseVideoModalOnMobile()) {
+      openVideoModal(src);
       return;
     }
     mainMedia.classList.remove('media-image', 'media-video-link');
     mainMedia.classList.add('media-video');
     mainImageShell?.classList.add('media-is-video');
-    if (/drive\.google\.com/.test(src)) {
-      mainMedia.innerHTML = `<iframe src="${escapeHtml(src)}" title="${escapeHtml(product.name)} video" allow="autoplay; fullscreen" loading="lazy"></iframe>`;
-    } else {
-      mainMedia.innerHTML = `<video src="${escapeHtml(src)}" controls playsinline preload="metadata"></video>`;
-    }
+    mainMedia.innerHTML = videoEmbedHtml(src);
   }
 
   function activateThumb(thumb) {
@@ -641,6 +650,10 @@ function renderProduct(products) {
 
   galleryPrevBtn?.addEventListener('click', () => showMediaAt(mediaIndex - 1));
   galleryNextBtn?.addEventListener('click', () => showMediaAt(mediaIndex + 1));
+  $$('[data-video-close]').forEach((button) => button.addEventListener('click', closeVideoModal));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeVideoModal();
+  });
 
   if (mediaItems.length) showMediaAt(0);
   else mainMedia.innerHTML = '<div class="empty-state">No image available</div>';

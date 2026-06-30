@@ -1,5 +1,5 @@
 const WHATSAPP_NUMBER = '918084509430';
-const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/Jd0HeHZ14IK7Cj0cV9jGwT?mode=ems_copy_t';
+const WHATSAPP_COMMUNITY_URL = 'https://wa.me/918084509430?text=Hi%2C%20I%20need%20help%20with%20an%20Alpaca%20F1%20Jackets%20order.';
 const STORE_NAME = 'Alpaca F1 Jackets';
 const SIZE_ORDER = { XS: 0, S: 1, M: 2, L: 3, XL: 4, '2XL': 5, XXL: 5, '3XL': 6, '4XL': 7, '5XL': 8 };
 const PUBLIC_STOCK_CAP = 3; // Customers never see or order more than this per size. Admin keeps actual stock.

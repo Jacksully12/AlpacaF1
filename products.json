@@ -8,9 +8,11 @@
         "stock": 1
       }
     ],
-    "price": 3199,
+    "price": 3299,
     "currency": "INR",
     "images": [
+      "assets/jacket-1-lifestyle-1.webp",
+      "assets/jacket-1-lifestyle-2.webp",
       "assets/jacket-1-1.webp",
       "assets/jacket-1-2.webp"
     ],
@@ -38,9 +40,12 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-2-lifestyle-3.webp",
+      "assets/jacket-2-lifestyle-1.webp",
+      "assets/jacket-2-lifestyle-2.webp",
       "assets/jacket-2-1.webp",
       "assets/jacket-2-2.webp"
     ],
@@ -64,9 +69,11 @@
         "stock": 1
       }
     ],
-    "price": 3699,
+    "price": 3799,
     "currency": "INR",
     "images": [
+      "assets/jacket-3-lifestyle-2.webp",
+      "assets/jacket-3-lifestyle-1.webp",
       "assets/jacket-3-1.webp",
       "assets/jacket-3-2.webp"
     ],
@@ -94,9 +101,11 @@
         "stock": 2
       }
     ],
-    "price": 3699,
+    "price": 3799,
     "currency": "INR",
     "images": [
+      "assets/jacket-4-lifestyle-1.webp",
+      "assets/jacket-4-lifestyle-2.webp",
       "assets/jacket-4-1.webp",
       "assets/jacket-4-2.webp"
     ],
@@ -115,9 +124,11 @@
     "id": "jacket-5",
     "name": "BMW Blue",
     "sizes": [],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-5-lifestyle-2.webp",
+      "assets/jacket-5-lifestyle-1.webp",
       "assets/jacket-5-1.webp",
       "assets/jacket-5-2.webp"
     ],
@@ -141,9 +152,11 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-6-lifestyle-2.webp",
+      "assets/jacket-6-lifestyle-1.webp",
       "assets/jacket-6-1.webp",
       "assets/jacket-6-2.webp"
     ],
@@ -167,9 +180,11 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-8-lifestyle-1.webp",
+      "assets/jacket-8-lifestyle-2.webp",
       "assets/jacket-8-1.webp",
       "assets/jacket-8-2.webp"
     ],
@@ -193,9 +208,13 @@
         "stock": 0
       }
     ],
-    "price": 3199,
+    "price": 3299,
     "currency": "INR",
     "images": [
+      "assets/jacket-9-lifestyle-1.webp",
+      "assets/jacket-9-lifestyle-2.webp",
+      "assets/jacket-9-lifestyle-3.webp",
+      "assets/jacket-9-lifestyle-4.webp",
       "assets/jacket-9-1.webp",
       "assets/jacket-9-2.webp"
     ],
@@ -223,12 +242,12 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
-      "assets/jacket-10-1.webp",
       "assets/vw-front-model.webp",
       "assets/vw-back-model.webp",
+      "assets/jacket-10-1.webp",
       "assets/jacket-10-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1yJ0wFhuJxIRPUnOxhbcTqdfkJ39ti_32/preview",
@@ -255,11 +274,12 @@
         "stock": 1
       }
     ],
-    "price": 3199,
+    "price": 3299,
     "currency": "INR",
     "images": [
+      "assets/jacket-11-lifestyle-1.webp",
+      "assets/jacket-11-lifestyle-2.webp",
       "assets/jacket-11-1.webp",
-      "assets/mercedes-black-model.webp",
       "assets/jacket-11-2.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1iw4Y12x6FGT1nEUx97hq1FYqXORegzf2/preview",
@@ -282,9 +302,11 @@
         "stock": 2
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-12-lifestyle-1.webp",
+      "assets/jacket-12-lifestyle-2.webp",
       "assets/jacket-12-1.webp",
       "assets/jacket-12-2.webp"
     ],
@@ -312,9 +334,11 @@
         "stock": 3
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-13-lifestyle-1.webp",
+      "assets/jacket-13-lifestyle-2.webp",
       "assets/jacket-13-1.webp",
       "assets/jacket-13-2.webp"
     ],
@@ -338,9 +362,12 @@
         "stock": 6
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-14-lifestyle-1.webp",
+      "assets/jacket-14-lifestyle-2.webp",
+      "assets/jacket-14-lifestyle-3.webp",
       "assets/jacket-14-1.webp",
       "assets/jacket-14-2.webp"
     ],
@@ -364,9 +391,11 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-15-lifestyle-1.webp",
+      "assets/jacket-15-lifestyle-2.webp",
       "assets/jacket-15-1.webp",
       "assets/jacket-15-2.webp"
     ],
@@ -385,9 +414,11 @@
     "id": "jacket-16",
     "name": "Black Red Mercedes",
     "sizes": [],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-16-lifestyle-1.webp",
+      "assets/jacket-16-lifestyle-2.webp",
       "assets/jacket-16-1.webp",
       "assets/jacket-16-2.webp"
     ],
@@ -411,9 +442,11 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-17-lifestyle-1.webp",
+      "assets/jacket-17-lifestyle-2.webp",
       "assets/jacket-17-1.webp",
       "assets/jacket-17-2.webp"
     ],
@@ -437,9 +470,11 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-18-lifestyle-1.webp",
+      "assets/jacket-18-lifestyle-2.webp",
       "assets/jacket-18-1.webp",
       "assets/jacket-18-2.webp"
     ],
@@ -467,9 +502,11 @@
         "stock": 0
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-19-lifestyle-1.webp",
+      "assets/jacket-19-lifestyle-2.webp",
       "assets/jacket-19-1.webp",
       "assets/jacket-19-2.webp"
     ],
@@ -497,9 +534,11 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-20-lifestyle-1.webp",
+      "assets/jacket-20-lifestyle-2.webp",
       "assets/jacket-20-1.webp",
       "assets/jacket-20-2.webp"
     ],
@@ -523,9 +562,11 @@
         "stock": 1
       }
     ],
-    "price": 3250,
+    "price": 3350,
     "currency": "INR",
     "images": [
+      "assets/jacket-21-lifestyle-1.webp",
+      "assets/jacket-21-lifestyle-2.webp",
       "assets/jacket-21-1.webp"
     ],
     "videoUrl": "",
@@ -550,9 +591,11 @@
         "stock": 1
       }
     ],
-    "price": 2999,
+    "price": 3099,
     "currency": "INR",
     "images": [
+      "assets/adidas-thick-lifestyle-1.webp",
+      "assets/adidas-thick-lifestyle-2.webp",
       "assets/adidas-thick-1.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1BrLaRHHqaD3XFYw2dBQ68Cg63xH2weHx/preview",
@@ -587,9 +630,11 @@
         "stock": 1
       }
     ],
-    "price": 1899,
+    "price": 1999,
     "currency": "INR",
     "images": [
+      "assets/nike-windcheater-lifestyle-1.webp",
+      "assets/nike-windcheater-lifestyle-2.webp",
       "assets/nike-windcheater-grey.webp",
       "assets/nike-windcheater-black.webp"
     ],
@@ -618,9 +663,12 @@
         "stock": 0
       }
     ],
-    "price": 3899,
+    "price": 3999,
     "currency": "INR",
     "images": [
+      "assets/adidas-cny-blue-lifestyle-1.webp",
+      "assets/adidas-cny-blue-lifestyle-2.webp",
+      "assets/adidas-cny-blue-lifestyle-3.webp",
       "assets/adidas-cny-blue-1.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1RThEYVSnOJAKxaQp4k2ZV07m1IOWle0O/preview",
@@ -647,9 +695,11 @@
         "stock": 1
       }
     ],
-    "price": 3899,
+    "price": 3999,
     "currency": "INR",
     "images": [
+      "assets/adidas-cny-white-lifestyle-1.webp",
+      "assets/adidas-cny-white-lifestyle-2.webp",
       "assets/adidas-cny-white-1.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1Se8pMQChucmzM7ZyYlx7dX9D7FypYTdV/preview",
@@ -676,7 +726,7 @@
         "stock": 0
       }
     ],
-    "price": 3699,
+    "price": 3799,
     "currency": "INR",
     "images": [
       "assets/2.1.webp",
@@ -703,9 +753,11 @@
         "stock": 0
       }
     ],
-    "price": 3699,
+    "price": 3799,
     "currency": "INR",
     "images": [
+      "assets/ferrari-team-white-lifestyle-1.webp",
+      "assets/ferrari-team-white-lifestyle-2.webp",
       "assets/3.1.webp",
       "assets/3.2.webp"
     ],
@@ -729,9 +781,13 @@
         "stock": 0
       }
     ],
-    "price": 3899,
+    "price": 3999,
     "currency": "INR",
     "images": [
+      "assets/redbull-racing-navy-model-1.webp",
+      "assets/redbull-racing-navy-model-2.webp",
+      "assets/redbull-racing-navy-model-3.webp",
+      "assets/redbull-racing-navy-model-4.webp",
       "assets/1.1.webp",
       "assets/1.2.webp"
     ],

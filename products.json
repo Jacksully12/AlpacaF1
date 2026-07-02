@@ -72,8 +72,8 @@
     "price": 3799,
     "currency": "INR",
     "images": [
-      "assets/jacket-3-lifestyle-2.webp",
       "assets/jacket-3-lifestyle-1.webp",
+      "assets/jacket-3-lifestyle-2.webp",
       "assets/jacket-3-1.webp",
       "assets/jacket-3-2.webp"
     ],
@@ -155,8 +155,8 @@
     "price": 3350,
     "currency": "INR",
     "images": [
-      "assets/jacket-6-lifestyle-2.webp",
       "assets/jacket-6-lifestyle-1.webp",
+      "assets/jacket-6-lifestyle-2.webp",
       "assets/jacket-6-1.webp",
       "assets/jacket-6-2.webp"
     ],

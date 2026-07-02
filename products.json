@@ -729,6 +729,8 @@
     "price": 3799,
     "currency": "INR",
     "images": [
+      "assets/ferrari-team-black-lifestyle-1.webp",
+      "assets/ferrari-team-black-lifestyle-2.webp",
       "assets/2.1.webp",
       "assets/2.2.webp",
       "assets/2.3.webp"

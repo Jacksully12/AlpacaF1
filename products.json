@@ -655,30 +655,23 @@
     "name": "Adidas Originals CNY Jacket (Blue)",
     "sizes": [
       {
-        "label": "S",
-        "stock": 0
-      },
-      {
         "label": "M",
-        "stock": 0
+        "stock": 2
       }
     ],
     "price": 3999,
     "currency": "INR",
     "images": [
-      "assets/adidas-cny-blue-lifestyle-1.webp",
-      "assets/adidas-cny-blue-lifestyle-2.webp",
-      "assets/adidas-cny-blue-lifestyle-3.webp",
-      "assets/adidas-cny-blue-1.webp"
+      "assets/adidas-cny-blue-current.webp"
     ],
-    "videoUrl": "https://drive.google.com/file/d/1RThEYVSnOJAKxaQp4k2ZV07m1IOWle0O/preview",
+    "videoUrl": "https://drive.google.com/file/d/1MExgb6X8BHOtikxRjkmWDnI3Pn2013Na/preview",
     "badge": "Premium Jacket",
-    "status": "out_of_stock",
+    "status": "in_stock",
     "category": "F1 Jacket",
     "type": "Premium Embroidery",
     "featured": true,
     "videoUrls": [
-      "https://drive.google.com/file/d/1RThEYVSnOJAKxaQp4k2ZV07m1IOWle0O/preview"
+      "https://drive.google.com/file/d/1MExgb6X8BHOtikxRjkmWDnI3Pn2013Na/preview"
     ],
     "description": "Adidas Originals CNY Jacket (Blue) with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
   },
@@ -728,7 +721,6 @@
       "assets/ferrari-red-black-1.webp",
       "assets/ferrari-red-black-2.webp",
       "assets/ferrari-red-black-3.webp",
-      "assets/ferrari-red-black-4.webp",
       "assets/ferrari-red-black-5.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1vA_hyMlh10ZVxLrYdSbTDBGReTE73mYe/preview",

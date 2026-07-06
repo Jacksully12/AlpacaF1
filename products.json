@@ -95,30 +95,31 @@
       {
         "label": "L",
         "stock": 1
-      },
-      {
-        "label": "2XL",
-        "stock": 2
       }
     ],
     "price": 3799,
     "currency": "INR",
     "images": [
+      "assets/ferrari-red-model-front-20260706.webp",
+      "assets/ferrari-red-model-back-20260706.webp",
+      "assets/ferrari-red-flat-front-20260706.webp",
+      "assets/ferrari-red-flat-back-20260706.webp",
+      "assets/ferrari-red-flat-front-alt-20260706.webp",
       "assets/jacket-4-lifestyle-1.webp",
       "assets/jacket-4-lifestyle-2.webp",
       "assets/jacket-4-1.webp",
       "assets/jacket-4-2.webp"
     ],
-    "videoUrl": "https://drive.google.com/file/d/1RXdF1hYvQcmRru9JxeEoMB-xucFJHtwX/preview",
+    "videoUrl": "https://drive.google.com/file/d/1vA_hyMlh10ZVxLrYdSbTDBGReTE73mYe/preview",
     "badge": "Premium Embroidery",
     "status": "in_stock",
     "category": "F1 Jacket",
     "type": "Premium Embroidery",
     "featured": true,
     "videoUrls": [
-      "https://drive.google.com/file/d/1RXdF1hYvQcmRru9JxeEoMB-xucFJHtwX/preview"
+      "https://drive.google.com/file/d/1vA_hyMlh10ZVxLrYdSbTDBGReTE73mYe/preview"
     ],
-    "description": "Ferrari Red with premium embroidery-style detailing and a sharp motorsport jacket finish. Please compare the measurements before confirming your order."
+    "description": "Ferrari Red with premium embroidery-style detailing and a sharp motorsport jacket finish. Only L size is currently available. Please compare the measurements before confirming your order."
   },
   {
     "id": "jacket-5",

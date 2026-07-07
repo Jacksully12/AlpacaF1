@@ -662,6 +662,10 @@
     "price": 3999,
     "currency": "INR",
     "images": [
+      "assets/adidas-cny-blue-model-1.webp",
+      "assets/adidas-cny-blue-model-2.webp",
+      "assets/adidas-cny-blue-model-3.webp",
+      "assets/adidas-cny-blue-model-4.webp",
       "assets/adidas-cny-blue-current.webp"
     ],
     "videoUrl": "https://drive.google.com/file/d/1MExgb6X8BHOtikxRjkmWDnI3Pn2013Na/preview",

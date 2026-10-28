@@ -234,10 +234,6 @@
     "name": "Volkswagen",
     "sizes": [
       {
-        "label": "M",
-        "stock": 1
-      },
-      {
         "label": "L",
         "stock": 1
       }
